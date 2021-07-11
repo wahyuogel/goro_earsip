@@ -26,7 +26,7 @@ class ArchiveTable extends Component{
                     <th className="border-bottom">Perihal</th>
                     <th className="border-bottom">Tipe</th>
                     <th className="border-bottom">Link Download</th>
-                    {this.state.loggedUser == "admin" ? <th className="border-bottom">Action</th> : <span />}
+                    {this.state.loggedUser.level == "admin" ? <th className="border-bottom">Action</th> : <span />}
                 </tr>
                 </thead>
                 <tbody>

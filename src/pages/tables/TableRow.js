@@ -70,7 +70,7 @@ class TableRow extends Component {
           </span>
         </td>
 
-        {this.state.loggedUser == "admin" ? <td>
+        {this.state.loggedUser.level == "admin" ? <td>
           <Dropdown as={ButtonGroup}>
             <Dropdown.Toggle as={Button} split variant="link" className="text-dark m-0 p-0">
               <span className="icon icon-sm">
