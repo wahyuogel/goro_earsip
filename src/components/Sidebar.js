@@ -106,10 +106,8 @@ export default (props = {}) => {
             </div>
             <Nav className="flex-column pt-3 pt-md-0">
                <NavItem title="Cari Arsip" icon={faSearchPlus} link={Routes.Search.path} />
-              <NavItem title="Tambah Arsip" icon={faPlusCircle} link={Routes.AddDocument.path} />
-             
+               {user.level == "admin" ? <NavItem title="Tambah Arsip" icon={faPlusCircle} link={Routes.AddDocument.path} /> : <br />}
               <Dropdown.Divider className="my-3 border-indigo" />
-
               <NavItem title="Surat Masuk" icon={faFile} link={Routes.SuratMasuk.path} />
               <NavItem title="Surat Keluar"icon={faFile} link={Routes.SuratKeluar.path} />
               <NavItem title="Paket Konsultasi"icon={faFile} link={Routes.PaketKonsultasi.path} />
