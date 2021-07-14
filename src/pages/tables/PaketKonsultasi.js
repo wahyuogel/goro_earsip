@@ -49,6 +49,7 @@ class PaketKonsultasi extends Component {
 				documentDate,
 				documentType,
 				documentNumber,
+				documentTypeLabel: this.state.documentTypeLabel,
 				linkUpload,
 				location,
 				updated_at,

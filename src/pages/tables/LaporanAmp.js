@@ -5,12 +5,12 @@ import { Breadcrumb } from "@themesberg/react-bootstrap";
 import ArchiveTable from "./ArchiveTable";
 import ArchiveService from "../../services/archive.service";
 
-class SpesifikasiUmumKhusus extends Component {
+class LaporanAmp extends Component {
 	constructor(props) {
 		super(props);
-		const pathName = "spesifikasi-umum-khusus";
+		const pathName = "laporan-amp";
 		const documentType = pathName.replace("/", "");
-		const documentTypeLabel = "Spesifikasi Umum & Khusus";
+		const documentTypeLabel = documentType.replace("-", " ");
 		this.ref = ArchiveService.getAll().where("documentType", "==", pathName);
 		this.subscribe = null;
 		this.state = {
@@ -102,4 +102,4 @@ class SpesifikasiUmumKhusus extends Component {
 	}
 }
 
-export default SpesifikasiUmumKhusus;
+export default LaporanAmp;

@@ -13,6 +13,7 @@ import {
 import moment from "moment-timezone";
 import Datetime from "react-datetime";
 import FileUploader from "./components/FileUploader";
+import ReactTags from "react-tag-autocomplete";
 
 class AddDocument extends Component {
 	constructor() {
@@ -30,7 +31,17 @@ class AddDocument extends Component {
 			updated_at: new Date(),
 			created_at: new Date(),
 			submitted: false,
+			keyword: [],
+			tags: [],
+			suggestions: [
+				{ id: 3, name: "surat" },
+				{ id: 4, name: "dokumen" },
+				{ id: 5, name: "perjanjian" },
+				{ id: 6, name: "peraturan" },
+			],
 		};
+
+		this.reactTags = React.createRef();
 	}
 	onChange = (e) => {
 		const state = this.state;
@@ -44,6 +55,21 @@ class AddDocument extends Component {
 		this.setState(state);
 	}
 
+	onDelete(i) {
+		let tags = this.state.tags.slice(0);
+		tags.splice(i, 1);
+		this.setState({ tags });
+	}
+
+	onAddition(tag) {
+		const tags = [].concat(this.state.tags, tag);
+		this.setState({ tags });
+	}
+
+	onValidate(tag) {
+		return /^[A-Z]{3,12}$/i.test(tag.name);
+	}
+
 	handlerFileUploader(param, value) {
 		const state = this.state;
 		state[param] = value;
@@ -52,6 +78,8 @@ class AddDocument extends Component {
 
 	saveArchive = (e) => {
 		e.preventDefault();
+		let keyword = [];
+		this.state.tags.map((key) => keyword.push(key.name));
 		let data = {
 			documentNumber: new Date().getTime().toString(),
 			description: this.state.description,
@@ -60,6 +88,7 @@ class AddDocument extends Component {
 			location: this.state.location,
 			documentType: this.state.documentType,
 			documentDate: this.state.documentDate,
+			keyword: keyword,
 			updated_at: new Date(),
 			created_at: new Date(),
 		};
@@ -202,6 +231,7 @@ class AddDocument extends Component {
 													</option>
 													<option value="sop">SOP</option>
 													<option value="spt">SPT</option>
+													<option value="laporan-amp">Laporan AMP</option>
 												</Form.Select>
 											</Form.Group>
 										</Col>
@@ -217,6 +247,26 @@ class AddDocument extends Component {
 													onChange={this.onChange}
 													placeholder="Lokasi fisik dokumen disimpan.."
 												/>
+											</Form.Group>
+										</Col>
+
+										<Col md={6} className="mb-3">
+											<Form.Group id="location">
+												<Form.Label>Kata Kunci</Form.Label>
+												<ReactTags
+													style="{{minWidth: 200px;}}"
+													allowNew
+													ref={this.reactTags}
+													tags={this.state.tags}
+													autoresize={false}
+													placeholderText="Masukan kata kunci.."
+													suggestions={this.state.suggestions}
+													onDelete={this.onDelete.bind(this)}
+													onAddition={this.onAddition.bind(this)}
+												/>
+												<span>
+													*Gunakan Enter & Tab untuk menambahkan kata kunci
+												</span>
 											</Form.Group>
 										</Col>
 									</Row>

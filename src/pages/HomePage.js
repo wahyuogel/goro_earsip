@@ -34,6 +34,7 @@ import ManualPelaksanaan from "./tables/ManualPelaksanaan";
 import Sop from "./tables/Sop";
 import Spt from "./tables/Spt";
 import UndangUndang from "./tables/UndangUndang";
+import LaporanAmp from "./tables/LaporanAmp";
 
 // components
 import Sidebar from "../components/Sidebar";
@@ -228,6 +229,11 @@ export default () => (
 		/>
 		<RouteWithSidebar exact path={Routes.Sop.path} component={Sop} />
 		<RouteWithSidebar exact path={Routes.Spt.path} component={Spt} />
+		<RouteWithSidebar
+			exact
+			path={Routes.LaporanAmp.path}
+			component={LaporanAmp}
+		/>
 
 		{/* components */}
 		<RouteWithSidebar

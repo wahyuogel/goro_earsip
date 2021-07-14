@@ -257,6 +257,11 @@ export default (props = {}) => {
 							/>
 							<NavItem title="SOP" icon={faFile} link={Routes.Sop.path} />
 							<NavItem title="SPT" icon={faFile} link={Routes.Spt.path} />
+							<NavItem
+								title="Laporan AMP"
+								icon={faFile}
+								link={Routes.LaporanAmp.path}
+							/>
 						</Nav>
 					</div>
 				</SimpleBar>

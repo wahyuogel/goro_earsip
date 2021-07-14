@@ -48,6 +48,7 @@ class Ded extends Component {
 				description,
 				documentDate,
 				documentType,
+				documentTypeLabel: this.state.documentTypeLabel,
 				documentNumber,
 				linkUpload,
 				location,

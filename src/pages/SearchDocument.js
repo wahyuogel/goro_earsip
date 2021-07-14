@@ -31,9 +31,10 @@ class SearchDocument extends Component {
 		e.preventDefault();
 		const archives = [];
 		ArchiveService.getAll()
-			.orderBy("documentName")
-			.startAt(queryText)
-			.endAt(queryText + "~")
+			// .orderBy("documentName")
+			// .startAt(queryText)
+			// .endAt(queryText + "~")
+			.where("keyword", "array-contains", queryText)
 			.get()
 			.then((snapshot) => {
 				snapshot.forEach((doc) => {
