@@ -67,9 +67,11 @@ class EditDocument extends Component {
 			if (t.exists) {
 				const doc = t.data();
 				let tags = [];
-				doc.keyword.map((key, index) => {
-					tags.push({ id: index, name: key });
-				});
+				if (doc.keyword) {
+					doc.keyword.map((key, index) => {
+						tags.push({ id: index, name: key });
+					});
+				}
 				this.setState({
 					key: doc.id,
 					documentNumber: doc.documentNumber,
