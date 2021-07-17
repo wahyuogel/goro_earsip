@@ -9191,7 +9191,7 @@
     "react-is" "^16.3.2"
     "warning" "^4.0.0"
 
-"prop-types@^15.0.0", "prop-types@^15.5.0", "prop-types@^15.5.7", "prop-types@^15.5.8", "prop-types@^15.6.1", "prop-types@^15.6.2", "prop-types@^15.7.2":
+"prop-types@^15.0.0", "prop-types@^15.5.0", "prop-types@^15.5.7", "prop-types@^15.5.8", "prop-types@^15.6.0", "prop-types@^15.6.1", "prop-types@^15.6.2", "prop-types@^15.7.2":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -9594,6 +9594,13 @@
   "integrity" "sha512-bL5W5mAxSW6+cLwqqVWY47Silqgy2DKDTR4hDBrLrUqC5BXc29YVx17l2IZk5v36VcDEq1Bszu2oHm1qBwKqBA=="
   "resolved" "https://registry.npmjs.org/react-simple-code-editor/-/react-simple-code-editor-0.10.0.tgz"
   "version" "0.10.0"
+
+"react-table-filter@^2.0.2":
+  "integrity" "sha512-ewjsmYmUyy/0E/yXPjOwSnpmKubqhNPNMiHJcnlyuqxxBRkC5/+exnTFOflJomEnW5EcxmsoSOJigpOERPHxWQ=="
+  "resolved" "https://registry.npmjs.org/react-table-filter/-/react-table-filter-2.0.2.tgz"
+  "version" "2.0.2"
+  dependencies:
+    "prop-types" "^15.6.0"
 
 "react-tag-autocomplete@^6.2.0":
   "integrity" "sha512-sBBwYoBVdJFQffhqOjjvcN2/1M92cG1YRKeyFgXEN44xxlTIUyneqzkw8l096pA3DSmUmgNc9z3JFG26xZRnbg=="

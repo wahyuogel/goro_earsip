@@ -93,7 +93,7 @@ class SpesifikasiUmumKhusus extends Component {
 				{!this.state.isFetch ? (
 					<span>Sedang memuat data</span>
 				) : this.state.archives.length > 0 ? (
-					<ArchiveTable data={this.state.archives} />
+					<ArchiveTable isSearch={false} data={this.state.archives} />
 				) : (
 					<span>Data tidak ditemukan</span>
 				)}

@@ -39,6 +39,11 @@ class TableRow extends Component {
 				console.log(e);
 			});
 	}
+
+	truncate(str, n) {
+		return str.length > n ? str.substr(0, n - 1) + "..." : str;
+	}
+
 	render() {
 		return (
 			<tr>
@@ -48,7 +53,12 @@ class TableRow extends Component {
           </Card.Link>
         </td> */}
 				<td>
-					<span className="fw-normal">{this.props.data.documentName}</span>
+					<span className="fw-normal">
+						{this.truncate(
+							this.props.data.documentName,
+							this.props.isSearch ? 30 : 65
+						)}
+					</span>
 				</td>
 				<td>
 					<span className="fw-normal">{this.props.data.location}</span>
@@ -59,12 +69,20 @@ class TableRow extends Component {
 					</span>
 				</td>
 				<td>
-					<span className="fw-normal">{this.props.data.description}</span>
+					<span className="fw-normal">
+						{this.truncate(this.props.data.documentName, 20)}
+					</span>
 				</td>
 				<td>
-					{this.props.data.documentTypeLabel
-						? this.props.data.documentTypeLabel.toUpperCase()
-						: this.props.data.documentType}
+					{this.props.isSearch ? (
+						this.props.data.documentTypeLabel ? (
+							this.props.data.documentTypeLabel.toUpperCase()
+						) : (
+							this.props.data.documentType
+						)
+					) : (
+						<span />
+					)}
 					<span className="fw-normal"></span>
 				</td>
 				<td>

@@ -30,6 +30,7 @@ class SearchDocument extends Component {
 	search(queryText, e) {
 		e.preventDefault();
 		const archives = [];
+		this.setState({ archives });
 		ArchiveService.getAll()
 			// .orderBy("documentName")
 			// .startAt(queryText)
@@ -121,7 +122,7 @@ class SearchDocument extends Component {
 				{!this.state.isFetch ? (
 					<span>Sedang memuat data</span>
 				) : this.state.archives.length > 0 ? (
-					<ArchiveTable data={this.state.archives} />
+					<ArchiveTable isSearch={true} data={this.state.archives} />
 				) : (
 					<span>Data tidak ditemukan. Silahkan masukan kata kunci lain</span>
 				)}
