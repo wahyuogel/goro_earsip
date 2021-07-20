@@ -70,7 +70,7 @@ class TableRow extends Component {
 				</td>
 				<td>
 					<span className="fw-normal">
-						{this.truncate(this.props.data.documentName, 20)}
+						{this.truncate(this.props.data.description, 20)}
 					</span>
 				</td>
 				<td>
