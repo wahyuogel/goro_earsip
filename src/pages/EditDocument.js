@@ -243,6 +243,9 @@ class EditDocument extends Component {
 													<option value="sop">SOP</option>
 													<option value="spt">SPT</option>
 													<option value="laporan-amp">Laporan AMP</option>
+													<option value="laporan-emonitoring">
+														Laporan E-Monitoring
+													</option>
 												</Form.Select>
 											</Form.Group>
 										</Col>

@@ -35,6 +35,7 @@ import Sop from "./tables/Sop";
 import Spt from "./tables/Spt";
 import UndangUndang from "./tables/UndangUndang";
 import LaporanAmp from "./tables/LaporanAmp";
+import LaporanEmonitoring from "./tables/LaporanEmonitoring";
 
 // components
 import Sidebar from "../components/Sidebar";
@@ -233,6 +234,11 @@ export default () => (
 			exact
 			path={Routes.LaporanAmp.path}
 			component={LaporanAmp}
+		/>
+		<RouteWithSidebar
+			exact
+			path={Routes.LaporanEmonitoring.path}
+			component={LaporanEmonitoring}
 		/>
 
 		{/* components */}

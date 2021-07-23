@@ -33,6 +33,7 @@ export const Routes = {
 	Sop: { path: "/sop" },
 	Spt: { path: "/spt" },
 	LaporanAmp: { path: "/laporan-amp" },
+	LaporanEmonitoring: { path: "/laporan-emonitoring" },
 
 	// components
 	Accordions: { path: "/components/accordions" },

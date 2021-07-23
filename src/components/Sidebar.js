@@ -262,6 +262,11 @@ export default (props = {}) => {
 								icon={faFile}
 								link={Routes.LaporanAmp.path}
 							/>
+							<NavItem
+								title="Laporan E-Monitoring"
+								icon={faFile}
+								link={Routes.LaporanEmonitoring.path}
+							/>
 						</Nav>
 					</div>
 				</SimpleBar>
